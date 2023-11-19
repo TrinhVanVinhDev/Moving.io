@@ -19,7 +19,8 @@ public class UIGamePlay : UICanvas
 
     private void Update()
     {
-        UpdateEnemyAlive();
+        int aliveCount = GameManager.Ins.listEnemyCount;
+        UpdateEnemyAlive(aliveCount);
         UpdatePlayerScore();
         if (gameObject.activeSelf && !String.Equals(playerController.curentTag, Constant.TAG_PLAYER_COLIDER))
         {
@@ -31,11 +32,16 @@ public class UIGamePlay : UICanvas
             UIManager.Ins.OpenUI<UILose>();
             Close(0);
         }
+
+        if(aliveCount < 1)
+        {
+            UIManager.Ins.OpenUI<UIWin>();
+            Close(0);
+        }
     }
 
-    private void UpdateEnemyAlive()
+    private void UpdateEnemyAlive(int aliveCount)
     {
-        int aliveCount = GameManager.Ins.listEnemyCount;
         aliveCountText.text = aliveCount.ToString();
     }
 
@@ -43,5 +49,11 @@ public class UIGamePlay : UICanvas
     {
         int playerScore = PlayerController.InsPlayer.point;
         playerScoreText.text = playerScore.ToString();
+    }
+    public void PauseButton()
+    {
+        Time.timeScale = 0;
+        UIManager.Ins.OpenUI<UIPause>();
+        Close(0);
     }
 }

@@ -22,8 +22,6 @@ public class PlayerController : Character
     [HideInInspector] public int coin = 0;
     [HideInInspector] public string curentTag;
 
-    private int pointPlayer = 0;
-
     private void Awake()
     {
         InsPlayer = this;
@@ -202,7 +200,7 @@ public class PlayerController : Character
 
     public void SetCoin(int coin)
     {
-        textCoin.text = coin.ToString();
+        textPoint.text = coin.ToString();
         ShowAnimPlusPoint(coin);
     }
 

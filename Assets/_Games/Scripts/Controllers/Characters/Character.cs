@@ -206,6 +206,13 @@ public class Character : MonoBehaviour
         return (PantId)pant.idSkin;
     }
 
+    public HeadId RandomCreateHead()
+    {
+        int indexHead = Random.Range(0, equipmentData.headCount - 1);
+        Skin head = equipmentData.GetHeadByIndex(indexHead);
+        return (HeadId)head.idSkin;
+    }
+
     public static void PlayGame()
     {
         isNotPlaying = false;

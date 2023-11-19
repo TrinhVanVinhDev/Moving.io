@@ -6,10 +6,12 @@ public class AttackState : IStateMachine
 {
 
     private float timeToAttack = 0f;
+    private float timeAttackRandom = 0;
 
     public void OnEnter(Character character)
     {
-        character.isAttack = true;
+        character.isAttack = true; 
+        timeAttackRandom = Random.Range(1f, 2f);
     }
 
     public void OnExcute(Character character)
@@ -23,8 +25,9 @@ public class AttackState : IStateMachine
                 character.ChangeAnimByBool(Constant.IS_IDLE);
             }
 
-            if(timeToAttack > Constant.TIME_FREEZE)
+            if(timeToAttack > timeAttackRandom)
             {
+                timeAttackRandom = Random.Range(1f, 2f);
                 character.Attack();
                 timeToAttack = 0f;
             }

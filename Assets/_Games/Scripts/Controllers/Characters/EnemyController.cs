@@ -25,7 +25,6 @@ public class EnemyController : Character
 
     public void UpdateEnemyControl()
     {
-        Debug.Log(isNotPlaying);
         if (isNotPlaying) return;
 
         if (isMoving)
@@ -91,9 +90,10 @@ public class EnemyController : Character
         Color skinColor = Random.ColorHSV();
         WeaponId idWe = RandomCreateWeapon();
         PantId idPant = RandomCreatePant();
+        HeadId idHead = RandomCreateHead();
         ChangeWeapon(idWe);
         ChangePant(idPant);
-        ChangeHat(HeadId.HEAD_2);
+        ChangeHat(idHead);
         ChangeSkinColor(skinColor);
         ChangePropertyWithWeapon(gameObject, idWe);
     }

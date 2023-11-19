@@ -44,13 +44,13 @@ public class IndicatorController : MonoBehaviour
 
     private Camera mainCamera;
     private RectTransform arrowTransform;
-    private Vector3 screenCentre;
+    private Vector3 screenCenter;
 
     public void OnInit()
     {
         arrowTransform = arrowObject.GetComponent<RectTransform>();
         mainCamera = Camera.main;
-        screenCentre = new Vector3(Screen.width, Screen.height, 0) / 2;
+        screenCenter = new Vector3(Screen.width, Screen.height, 0) / 2;
 
     }
 
@@ -60,8 +60,8 @@ public class IndicatorController : MonoBehaviour
         Vector3 toPosition = targetPosition;
         Vector3 formPosition = playerTransform.position;
         Vector3 dir = (toPosition - formPosition).normalized;
-        float angle = GetAngleFromVectorFloat(dir);
-        arrowTransform.localEulerAngles = new Vector3(0, 0, angle);
+        //float angle = GetAngleFromVectorFloat(dir);
+        //arrowTransform.localEulerAngles = new Vector3(0, 0, angle);
 
         Vector3 targetPositionScreenPoint = mainCamera.WorldToViewportPoint(targetPosition);
 
@@ -83,7 +83,7 @@ public class IndicatorController : MonoBehaviour
                     mainCamera.nearClipPlane
                 )
             );
-            arrowTransform.anchoredPosition = new Vector2(screneEdge.x - screenCentre.x, screneEdge.y - screenCentre.y);
+            arrowTransform.anchoredPosition = new Vector2(screneEdge.x - screenCenter.x, screneEdge.y - screenCenter.y);
         }
     }
 
@@ -92,7 +92,6 @@ public class IndicatorController : MonoBehaviour
         dir = dir.normalized;
         float angle = Mathf.Atan2(dir.z, dir.x) * Mathf.Rad2Deg;
         if (angle < 0) angle += 360;
-
         return angle;
     }
 }

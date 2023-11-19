@@ -10,7 +10,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private Transform playerTransform;
     [SerializeField] private RectTransform panelIndicator;
     private SpawnObject spawnObject;
-    private float timeToThink = 0;
     private float timeToDeath = 0;
 
     [HideInInspector] public int listEnemyCount;

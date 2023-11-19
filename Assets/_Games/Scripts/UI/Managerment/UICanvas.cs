@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UICanvas : MonoBehaviour
 {
@@ -80,4 +81,13 @@ public class UICanvas : MonoBehaviour
         Invoke(nameof(CloseDirectly), delayTime);
     }
 
+    public void GoHome()
+    {
+        Character.OutPlayGame();
+        if(Time.timeScale < 1)
+        {
+            Time.timeScale = 1;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

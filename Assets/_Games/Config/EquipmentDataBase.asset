@@ -22,7 +22,7 @@ MonoBehaviour:
     velocity: 0
     isReturn: 0
     isOwner: 1
-    isPlayerEquip: 1
+    isPlayerEquip: 0
     price: 0
   - id: 2
     name: Hammer
@@ -33,7 +33,7 @@ MonoBehaviour:
     velocity: 0
     isReturn: 0
     isOwner: 1
-    isPlayerEquip: 0
+    isPlayerEquip: 1
     price: 30
   - id: 3
     name: Arrow
@@ -54,7 +54,7 @@ MonoBehaviour:
     range: 3
     velocity: 0
     isReturn: 0
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 50
   - id: 5
@@ -65,7 +65,7 @@ MonoBehaviour:
     range: 0
     velocity: 0
     isReturn: 0
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 60
   head:
@@ -74,31 +74,31 @@ MonoBehaviour:
     skinMaterial: {fileID: 0}
     idSkin: 1
     typeEquip: 1
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0
   - skinName: Head_2
-    skinPrefabs: {fileID: 919132149155446097, guid: eb9c04a3bba8f774780835eb09f357e4, type: 3}
+    skinPrefabs: {fileID: 919132149155446097, guid: 1bf01145579a02142997df86733c8be0, type: 3}
     skinMaterial: {fileID: 0}
     idSkin: 2
     typeEquip: 1
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0
   - skinName: Head_3
-    skinPrefabs: {fileID: 919132149155446097, guid: bba285aef63a10e42bc86992a50828ec, type: 3}
+    skinPrefabs: {fileID: 919132149155446097, guid: 2d30a4e6a10a4764695c33b96b5e5532, type: 3}
     skinMaterial: {fileID: 0}
     idSkin: 3
     typeEquip: 1
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0
   - skinName: Head_4
-    skinPrefabs: {fileID: 919132149155446097, guid: 1bf01145579a02142997df86733c8be0, type: 3}
+    skinPrefabs: {fileID: 919132149155446097, guid: c4a67d8b4590d894db81b0fa871d0cc7, type: 3}
     skinMaterial: {fileID: 0}
     idSkin: 4
     typeEquip: 1
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0
   - skinName: Head_5
@@ -106,7 +106,7 @@ MonoBehaviour:
     skinMaterial: {fileID: 0}
     idSkin: 5
     typeEquip: 1
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0
   pant:
@@ -115,7 +115,7 @@ MonoBehaviour:
     skinMaterial: {fileID: 2100000, guid: b4e6bf11a683e804281e2fa03a0c02ce, type: 2}
     idSkin: 1
     typeEquip: 2
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0
   - skinName: Pant_2
@@ -123,7 +123,7 @@ MonoBehaviour:
     skinMaterial: {fileID: 2100000, guid: 27510d0496654794988b98ca378e5357, type: 2}
     idSkin: 2
     typeEquip: 2
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0
   - skinName: Pant_3
@@ -131,7 +131,7 @@ MonoBehaviour:
     skinMaterial: {fileID: 2100000, guid: 2af060949281f334883b4cab2501b285, type: 2}
     idSkin: 3
     typeEquip: 2
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0
   - skinName: Pant_4
@@ -139,7 +139,7 @@ MonoBehaviour:
     skinMaterial: {fileID: 2100000, guid: 3f870564e3fa5474e8fc2b03336a6cbb, type: 2}
     idSkin: 4
     typeEquip: 2
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0
   - skinName: Pant_5
@@ -147,6 +147,6 @@ MonoBehaviour:
     skinMaterial: {fileID: 2100000, guid: 2720cb5789c16ce438a2dd61b2c4820c, type: 2}
     idSkin: 5
     typeEquip: 2
-    isOwner: 0
+    isOwner: 1
     isPlayerEquip: 0
     price: 0

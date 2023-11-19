@@ -27,12 +27,12 @@ public class WeaponAttack : MonoBehaviour
                     ChangeSizeWhenCharDeath(Constant.TAG_PLAYER_COLIDER);
                 }
 
-                if(characterSelf.CompareTag(Constant.TAG_PLAYER_COLIDER)
-                    && other.CompareTag(Constant.TAG_ENEMY_COLIDER)
-                )
-                {
-                    PlusPointInPlayer();
-                }
+                //if(characterSelf.CompareTag(Constant.TAG_PLAYER_COLIDER)
+                //    && other.CompareTag(Constant.TAG_ENEMY_COLIDER)
+                //)
+                //{
+                //    PlusPointInPlayer();
+                //}
             }
         }
     }
@@ -52,16 +52,17 @@ public class WeaponAttack : MonoBehaviour
         {
             Character charaCollider = parentCollider.GetComponent<Character>();
             Character charaSelf = characterSelf.parent.GetComponent<Character>();
-            if(!characterSelf.CompareTag(Constant.TAG_PLAYER_COLIDER))
+            if(charaCollider.point <= 0)
             {
-                if(charaCollider.point <= 0)
-                {
-                    charaSelf.point += 1;
-                } else
-                {
-                    charaSelf.point += charaCollider.point;
-                }
-                pointAfterKill = charaSelf.point;
+                charaSelf.point += 1;
+            } else
+            {
+                charaSelf.point += charaCollider.point;
+            }
+
+            if(characterSelf.CompareTag(Constant.TAG_PLAYER_COLIDER))
+            {
+                PlusPointInPlayer(charaSelf.point);
             }
             charaCollider.ChangeState(new DeathState());
         }
@@ -85,9 +86,8 @@ public class WeaponAttack : MonoBehaviour
         return collider.transform.parent != null;
     }
 
-    private void PlusPointInPlayer()
+    private void PlusPointInPlayer(int pointAfterKill)
     {
-        Debug.Log(pointAfterKill);
         PlayerController playerController = PlayerController.InsPlayer;
         playerController.SetCoin(pointAfterKill);
     }

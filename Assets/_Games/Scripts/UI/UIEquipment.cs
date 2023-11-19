@@ -96,7 +96,7 @@ public class UIEquipment : UICanvas
         for (int i = 0; i < equipmentData.pantCount; i++)
         {
             Skin pantData = equipmentData.GetPantById(i + 1);
-            if(pantData.isOwner)
+            if(!pantData.isOwner)
             {
                 itemOption = Instantiate(itemLock, contentItem);
                 EquipLock pantComponent = itemOption.GetComponent<EquipLock>();
